@@ -17,7 +17,14 @@ const SelectFilter = ({ value, options, onChange, ...rest }) => {
 
   return (
     <SelectContainer>
-      <select value={selectedValue} onChange={handleChange} tabIndex="0" autoFocus {...rest} data-testid="selectFilter">
+      <select
+        value={selectedValue}
+        onChange={handleChange}
+        tabIndex="0"
+        autoFocus
+        {...rest}
+        data-testid="selectFilter"
+      >
         {options.map((option, index) => (
           <option key={index} value={option.value}>
             {option.text}
@@ -31,8 +38,9 @@ const SelectFilter = ({ value, options, onChange, ...rest }) => {
 SelectFilter.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
+  // eslint-disable-next-line react/require-default-props
   rest: PropTypes.any,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
 }
 
 export default SelectFilter
